@@ -38,7 +38,7 @@
         <nav class="navbar navbar-dark bg-dark " style="height: 86px; ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#" style='font-family: "Sofia", sans-serif; '>
-                    <h1 style="margin-left: 140px; ">Inside The Box</h1>
+                    <h1 style="margin-left: 40px; ">Inside The Box</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
