@@ -17,9 +17,6 @@ if (!$con){
        $query="insert into teacher_info values('$teachername','$teachermail','$teacherpass')";
        $records=mysqli_query($con,$query);
        if(mysqli_affected_rows($con)){
-        $cookie_name = "role";
-        $cookie_value = "teacher";
-        setcookie($cookie_name, $cookie_value);
         header("Location: login.html");
        }
        }

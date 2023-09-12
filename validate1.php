@@ -12,8 +12,12 @@ if (!$con){
        $teachermail=$_POST["teacher_mail"];
        $teacherpass=$_POST["teacher_pass"];
        $query="select * from teacher_info where teacher_mail='".$teachermail."' and teacher_name='".$teachername."' and teacher_password='".$teacherpass."';";
-       if(mysqli_num_rows(mysqli_query($con,$query))>=1)
-       header("Location: success.html");
+       if(mysqli_num_rows(mysqli_query($con,$query))>=1){
+        $cookie_name = "role";
+        $cookie_value = "teacher";
+        setcookie($cookie_name, $cookie_value);
+        header("Location: success.php");
+    }
        else
        header("Location: failure.php");
     }

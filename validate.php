@@ -13,8 +13,12 @@ if (!$con){
        $studentpass=$_POST["student_pass"];
        $query="select *from student_info where student_mail='".$studentmail."' and student_password='".$studentpass."'";
        $records=mysqli_query($con,$query);
-       if(mysqli_num_rows($records)>=1)
-       header("Location: success.html");
+       if(mysqli_num_rows($records)>=1){
+        $cookie_name = "role";
+        $cookie_value = "student";
+        setcookie($cookie_name, $cookie_value);
+        header("Location: success.php");
+       }
        else
        header("Location: failure.php");
     }

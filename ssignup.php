@@ -1,6 +1,6 @@
 <?php
 $uname="root";
-$pass="";
+$pass="Naveen@123";
 $server="localhost";
 $dbname="wt";
 $con=mysqli_connect($server,$uname,$pass,$dbname);
@@ -15,9 +15,6 @@ if (!$con){
        $query="insert into student_info values('$studentname','$studentmail','$studentpass')";
        $records=mysqli_query($con,$query);
        if(mysqli_affected_rows($con)){
-        $cookie_name = "role";
-        $cookie_value = "student";
-        setcookie($cookie_name, $cookie_value);
        header("Location: login.html");
        }
        
