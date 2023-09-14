@@ -34,7 +34,18 @@
     ?>
     <!-- <h2>THIS IS PPS PAGE</h2> -->
     <div style="background-color:#d0bdf4;">
-        <a href="uploadtest.php"><button type="button" class="btn btn-primary mx-2" id="test">Take Test to Upload</button></a>
+    <?php
+    if($_COOKIE['role']==='teacher'){
+        include('connect.php');
+        $query="SELECT * FROM eligiblet WHERE mail='".$_COOKIE['mail']."' and subject='pps';";
+        if(mysqli_num_rows(mysqli_query($con,$query))==1){
+            echo '<a href="uploadfile.php"><button type="button" class="btn btn-primary mx-2" id="test">Upload</button></a>';
+        }
+        else{
+            echo '<a href="uploadtest.php"><button type="button" class="btn btn-primary mx-2" id="test">Take Test to Upload</button></a>'; 
+        }
+    }
+    ?>
         <div class="grid-container"  style="margin-top:30px">
             <!-- <div class="grid-item"><a href="pps.php"><button type="button" class="btn btn-success" style="width:100%;height:100%">PPS</button></a></div>
             <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">AP</button></div>

@@ -1,6 +1,6 @@
 <?php
 $uname="root";
-$pass="Naveen@123";
+$pass="";
 $server="localhost";
 $dbname="wt";
 $con=mysqli_connect($server,$uname,$pass,$dbname);

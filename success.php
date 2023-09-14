@@ -9,10 +9,13 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <style>
+        body{
+            background-color:black;
+        }
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #d0bdf4;
+  background-color: black;
   padding: 10px;
 }
 .grid-item {
@@ -20,16 +23,19 @@
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     border-radius:16px;
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 30px;
   text-align: center;
-  margin: 30px;
-  height:200px;
-  background:transparent;
+  /* margin: 30px;. */
+  height:270px;
+  /* background:transparent; */
 }
 .btn:hover{
-      background-color: #fceed1;
-      color:black;
+      background-color: black;
+      color:blue;
+    }
+    .btn-success{
+        --bs-btn-bg:#2ce7dd;
     }
 </style>
 </head>
@@ -88,7 +94,7 @@
 </div>
 </nav>
 <div>
-    <h1>Complete the qualification exam to access </h1>
+    <!-- <h1>Complete the qualification exam to access </h1> -->
     <div class="grid-container"  style="margin-top:30px">
   <div class="grid-item"><a href="pps.php"><button type="button" class="btn btn-success" style="width:100%;height:100%">PPS</button></a></div>
   <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">AP</button></div>
