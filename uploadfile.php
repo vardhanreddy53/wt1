@@ -53,16 +53,14 @@ include('nav.html');
 </html>
 <?php
 
-include('connect.php');
+
 if (isset($_POST['Upload']))
-{
-	$pname =$_FILES['image']['name'];
-    $rename=$pname;
-    $nn=$rename;
+{   $pname1=$_FILES['image']['name'];
+	$pname=$_COOKIE['subject'];
+    $pname0=$_COOKIE['name'];
 	$tname = $_FILES['image']['tmp_name'];
-	$uploads_dir= "videos/" .$nn;
-    $ft=pathinfo($pname);
-    $f1=$ft['extension'];
+    $f1=pathinfo($pname1,PATHINFO_EXTENSION);
+    $uploads_dir= "profiles/".$pname0.'/'.$pname.".mp4";
 	$t=date('d-m-y')."-".time();
 	if(file_exists($uploads_dir))
 	die('<font color="Crimson" size=5px >'.$pname.' File already Exists</font>');
@@ -77,13 +75,14 @@ if (isset($_POST['Upload']))
 	}
 	if($x==1)
 	{
-		die('<font color="#FF19F3" size=5px>'.$pname. ' is Wrong file format</font>');
+		die('<font color="#FF19F3" size=5px>'.$pname." ".$f1.' is Wrong file format</font>');
 	}
 	if($x==0)
 	{
 	move_uploaded_file($tname, $uploads_dir);
+    include('connect.php');
 	$sql = "INSERT INTO temp(videos,Uploaded_on) values('$uploads_dir',now())";
-	// if(mysqli_query($conn,$sql))
+     if(mysqli_query($conn,$sql))
 	die('<font color="green" size=5px>'.$pname. ' is Successfully Uploaded</font>');	
 	}
 }

@@ -16,6 +16,7 @@ if (!$con){
         $cookie_name = "role";
         $cookie_value = "teacher";
         setcookie($cookie_name, $cookie_value);
+        setcookie('name',$teachername);
         setcookie('mail',$teachermail);
         header("Location: success.php");
     }

@@ -17,7 +17,7 @@ if (!$con){
        $query="insert into teacher_info values('$teachername','$teachermail','$teacherpass')";
        $records=mysqli_query($con,$query);
        if(mysqli_affected_rows($con)){
-        mkdir('profiles/'.$teachername);
+        mkdir('profiles/'.$teacher);
         header("Location: login.html");
        }
        }

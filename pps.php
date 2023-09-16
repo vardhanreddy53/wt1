@@ -31,25 +31,24 @@
 <body>
     <?php
     include("nav.html");
+    setcookie('subject','pps');
     ?>
     <!-- <h2>THIS IS PPS PAGE</h2> -->
     <div style="background-color:#d0bdf4;">
     <?php
-    Session_start();
+    
     if($_COOKIE['role']==='teacher'){
         include('connect.php');
         $query="SELECT * FROM eligiblet WHERE mail='".$_COOKIE['mail']."' and subject='pps';";
         if(mysqli_num_rows(mysqli_query($con,$query))==1){
-            $_SESSION['subject']='pps';
             echo '<a href="uploadfile.php"><button type="button" class="btn btn-primary mx-2" id="test">Upload</button></a>';
         }
         else{
             echo '<a href="uploadtest.php"><button type="button" class="btn btn-primary mx-2" id="test">Take Test to Upload</button></a>'; 
         }
     }
-    ?>
-        <div class="grid-container"  style="margin-top:30px">
-            <div class="grid-item"><video controls loop src="pps1.mp4"></video></div>
+    echo '<div class="grid-container"  style="margin-top:30px">
+            <div class="grid-item"><video style="width:100%;height:100%" controls mute loop src="profiles/".$_COOKIE[name]."/".$_COOKIE[subject].".mp4"></video></div>
             <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">AP</button></div>
             <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">BEE</button></div>  
             <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">BEM</button></div>
@@ -60,6 +59,8 @@
             <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">CHEM</button></div>  
             <h2>Videos will be here</h2>
 </div>
-    </div>
+    </div>';
+    ?>
+       
 </body>
 </html>
