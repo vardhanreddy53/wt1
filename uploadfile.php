@@ -17,7 +17,7 @@ include('nav.html');
     <div class="box">
         <span class="borderline">
             <form method="post" enctype="multipart/form-data" >
-                <h3>UPLOADING  A FILE</h3>
+                <h3 style="color: #45f3f3;">UPLOADING  A FILE</h3>
                 <div class="inputbox">
                     <input type="file" required="required" name="image">
                     <i></i>
@@ -69,7 +69,7 @@ if (isset($_POST['Upload']))
 	if($_FILES['image']['size']>50000000000)
 	die('<font color="yellow" size=5px>Choose a file size below 5MB</font>');
     $x=0;
-	$ok=array("mkv","mp4","mov");
+	$ok=array("mp4");
 	foreach($ok as $a)
 	{
 	if(!in_array($f1,$ok))
