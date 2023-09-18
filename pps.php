@@ -47,18 +47,15 @@
             echo '<a href="uploadtest.php"><button type="button" class="btn btn-primary mx-2" id="test">Take Test to Upload</button></a>'; 
         }
     }
-    echo '<div class="grid-container"  style="margin-top:30px">
-            <div class="grid-item"><video style="width:100%;height:100%" controls mute loop src="profiles/".$_COOKIE[name]."/".$_COOKIE[subject].".mp4"></video></div>
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">AP</button></div>
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">BEE</button></div>  
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">BEM</button></div>
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">MVC</button></div>
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">PPS-2</button></div>  
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">SD</button></div>
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">DM</button></div>
-            <div class="grid-item"><button type="button" class="btn btn-success" style="width:100%;height:100%">CHEM</button></div>  
-            <h2>Videos will be here</h2>
-</div>
+    $mydir='profiles/';
+    $myfolders=scandir($mydir);
+    print_r($myfolders);
+    echo '<div class="grid-container"  style="margin-top:30px">';
+    foreach($myfolders as $i=>$i_value){
+        if($i_value!='.'&&$i_value!='..')
+         echo '<div class="grid-item"><video style="width:100%;height:100%" controls mute loop src="profiles/"'.$i_value."/".$_COOKIE['subject'].'.mp4></video></div>';
+    }
+echo '</div>
     </div>';
     ?>
        
