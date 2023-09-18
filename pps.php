@@ -51,11 +51,13 @@
     $myfolders=scandir($mydir);
     echo '<div class="grid-container"  style="margin-top:30px">';
     foreach($myfolders as $i=>$i_value){
-        if($i_value!='.'&&$i_value!='..')
-         echo '<div class="grid-item">
-                <video style="width:100%;height:100%" controls mute loop src="profiles/"'.$i_value."/".$_COOKIE['subject'].'.mp4>
-                </video>
-            </div>';
+        if($i_value!='.'&&$i_value!='..'){
+            $dir="profiles/$i_value/".$_COOKIE['subject'].".mp4";
+            echo "<div class='grid-item'>
+            <video style='width:100%;height:100%' controls mute loop src='$dir'>
+            </video>
+            </div>";
+        }
     }
 echo '</div>
     </div>';
