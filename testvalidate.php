@@ -15,7 +15,7 @@ if($per>=80)
 {
     echo "You have passed the exam and are eligible to Upload";
     include('connect.php');
-    $query="INSERT INTO eligiblet(`mail`, `subject`) VALUES ('','[value-2]');";
+    $query="INSERT INTO eligiblet(`mail`, `subject`)";
 }
 else{
     echo "U cant be like Vignesh without Studying Get yourself a life like vignesh";
